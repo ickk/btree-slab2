@@ -199,3 +199,16 @@ pub fn range_mut_single_next_back() {
 		assert_eq!(prev_len, &5);
 	}
 }
+
+#[test]
+pub fn range_next_back() {
+	let mut map = BTreeMap::new();
+	for i in 0..100 {
+		map.insert(i, i);
+	}
+
+	let mut it = map.range(..);
+	while let Some((key, value)) = it.next_back() {
+		assert_eq!(key, value);
+	}
+}
