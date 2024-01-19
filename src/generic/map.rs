@@ -2392,7 +2392,7 @@ where
 				Ok(addr) => addr,
 				Err(addr) => addr,
 			},
-			Bound::Unbounded => btree.first_back_address(),
+			Bound::Unbounded => btree.last_valid_address(),
 		};
 
 		Range { btree, addr, end }
@@ -2483,7 +2483,7 @@ where
 				Ok(addr) => addr,
 				Err(addr) => addr,
 			},
-			Bound::Unbounded => btree.first_back_address(),
+			Bound::Unbounded => btree.last_valid_address(),
 		};
 
 		RangeMut { btree, addr, end }
